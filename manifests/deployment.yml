@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: aksdemoimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aksdemoimage
+  template:
+    metadata:
+      labels:
+        app: aksdemoimage 
+    spec:
+      containers:
+        - name: aksdemoimage 
+          image: dqregistry007.azurecr.io/aksdemoimage
+          ports:
+          - containerPort: 80
